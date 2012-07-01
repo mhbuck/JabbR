@@ -10,7 +10,7 @@ namespace JabbR.ContentProviders
         {
             return TaskAsyncHelper.FromResult(new ContentProviderResult()
              {
-                 Content = String.Format(@"<img src=""proxy?url={0}"" />", request.RequestUri),
+                 Content = String.Format(@"<img src=""{0}"" />", request.RequestUri),
                  Title = request.RequestUri.AbsoluteUri.ToString()
              });
         }
