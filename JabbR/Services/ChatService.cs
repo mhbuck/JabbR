@@ -278,6 +278,14 @@ namespace JabbR.Services
             _crypto = crypto;
         }
 
+        public ChatUser AddUser(string identity)
+        {
+            var username = identity.Split('\\')[1];
+
+            // Configuration option?
+            return AddUser(username, identity, string.Format("{0}@openboxsoftware.com", username).ToLower());
+        }
+
         public ChatUser AddUser(string userName, string identity, string email)
         {
             if (!IsValidUserName(userName))
