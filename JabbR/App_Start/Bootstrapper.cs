@@ -134,6 +134,12 @@ namespace JabbR.App_Start
                 routeTemplate: "api/v1/{controller}/{room}"
             );
 
+            RouteTable.Routes.MapHttpRoute(
+                name: "FileUpload",
+                routeTemplate: "api/upload",
+                defaults: new { controller = "FileUpload" }
+            );
+
             RouteTable.Routes.MapHttpHandler<ProxyHandler>("proxy", "proxy/{*path}");
 
             RouteTable.Routes.MapHttpRoute(

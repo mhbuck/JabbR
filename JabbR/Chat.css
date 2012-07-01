@@ -39,6 +39,15 @@
   margin-left: 10px;
 }
 
+.filedroplocation
+{
+  background-color:black; 
+  margin-top:0px !important;
+  width:60%; 
+  padding:15px; 
+  text-align:center;
+}
+
 .banner a
 {
   color: #fff;

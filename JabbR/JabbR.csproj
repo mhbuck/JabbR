@@ -14,7 +14,7 @@
     <RootNamespace>JabbR</RootNamespace>
     <AssemblyName>JabbR</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <FileUpgradeFlags>
@@ -22,9 +22,10 @@
     <OldToolsVersion>4.0</OldToolsVersion>
     <UpgradeBackupLocation />
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressAnonymousAuthentication>
+    </IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -761,6 +762,7 @@
     <Content Include="Chat.githubissues.js" />
     <Content Include="Chat.githubissues.css" />
     <Content Include="Chat.nuget.css" />
+    <Content Include="Content\upload\TextFile1.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Content\images\big-logo.png" />
     <Content Include="Content\images\logo32.png" />
@@ -772,6 +774,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="robots.txt" />
+    <Content Include="Scripts\jquery.filedrop.js" />
     <Content Include="Scripts\jquery.history.js" />
     <Content Include="Scripts\jquery-1.7-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.js" />
@@ -822,6 +825,7 @@
     <Compile Include="Migrations\201206201924146_RoomWelcome.Designer.cs">
       <DependentUpon>201206201924146_RoomWelcome.cs</DependentUpon>
     </Compile>
+    <Compile Include="WebApi\FileUploadController.cs" />
     <Compile Include="WebApi\Model\ErrorModel.cs" />
     <Compile Include="Infrastructure\HttpRequestExtensions.cs" />
     <Compile Include="WebApi\MessagesController.cs" />
@@ -1072,6 +1076,10 @@
   <ItemGroup>
     <Content Include="Chat.emoji.js" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\File Deploy.pubxml" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -1087,7 +1095,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>16207</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:16207/</IISUrl>
+          <IISUrl>http://localhost/JabbRDev</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

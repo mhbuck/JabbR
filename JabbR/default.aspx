@@ -199,6 +199,9 @@
         <div>
           Powered by <a href="https://github.com/SignalR/SignalR" target="_blank">SignalR</a>
         </div>
+        <div id="filedroplocation" class="filedroplocation">
+            File drop spot
+        </div>
       </div>
       <a href="https://github.com/davidfowl/JabbR" class="forkme" target="_blank">
         </a>
@@ -320,6 +323,7 @@
         "~/Scripts/jquery.livesearch.js",
         "~/Scripts/Markdown.Converter.js",
         "~/Scripts/jquery.history.js",
+        "~/Scripts/jquery.filedrop.js",
         "~/Chat.utility.js",
         "~/Chat.emoji.js",
         "~/Chat.toast.js",
@@ -332,5 +336,32 @@
             .ForceRelease()
             .Render("~/Scripts/JabbR2_#.js")
   %>
+    <script type="text/javascript">
+        $(function () {
+            $('#filedroplocation').filedrop({
+                url: 'api/upload',
+                paramname: 'files',
+                maxFiles: 5,
+                dragOver: function () {
+                    $('#filedroplocation').css('background', 'blue');
+                },
+                dragLeave: function () {
+                    $('#filedroplocation').css('background', 'black');
+                },
+                drop: function () {
+                    $('#filedroplocation').css('background', 'black');
+                },
+                afterAll: function () {
+                    //$('#filedroplocation').html('The file(s) have been uploaded successfully!');
+                },
+                uploadFinished: function (i, file, response, time) {
+                    console.log($('#new-message'));
+                    $('#new-message').val(response);
+                    $('#send').click();
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>
