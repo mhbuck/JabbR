@@ -762,7 +762,7 @@
     <Content Include="Chat.githubissues.js" />
     <Content Include="Chat.githubissues.css" />
     <Content Include="Chat.nuget.css" />
-    <Content Include="Content\upload\TextFile1.txt" />
+    <Content Include="Content\upload\Placeholder.txt" />
     <Content Include="favicon.ico" />
     <Content Include="Content\images\big-logo.png" />
     <Content Include="Content\images\logo32.png" />
