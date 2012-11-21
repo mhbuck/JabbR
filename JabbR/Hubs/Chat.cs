@@ -477,7 +477,7 @@ namespace JabbR
                 {
                     var userViewModel = new UserViewModel(user);
 
-                    Clients.Group(room.Name).leave(userViewModel, room.Name).Wait();
+                    Clients.Group(room.Name).leave(userViewModel, room.Name);
                 }
             }
         }
